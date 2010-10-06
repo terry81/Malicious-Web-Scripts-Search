@@ -39,7 +39,7 @@ sub matchPattern {
         my @input_array=<INPUT>;
         close(INPUT);
         my $file_code=join("",@input_array);
-        $file_code =~ s#$changefrom#$changeto#sg;
+        $file_code =~ s#$changefrom#$changeto#sg; #Be careful with the 's' RE modifier. 
         open OUTPUT, '>', $file or warn;
         print(OUTPUT $file_code);
         close(OUTPUT);
